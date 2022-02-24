@@ -52,12 +52,14 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(params) {
-            return ``
+        function renderReadme(title) {
+            return `# ${title}
+ 
+            `
         }
 
 
-        fs.appendFile("README.md", (renderReadme(params)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
