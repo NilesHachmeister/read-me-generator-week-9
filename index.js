@@ -53,7 +53,7 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title, license) {
+        function renderReadme(title, license, description) {
             let licenseBadge = "";
 
             switch (license) {
@@ -65,9 +65,9 @@ inquirer
                     break;
                 case "BSD 3": licenseBadge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
                     break;
-                case "none": licenseBadge = "none"
+                case "none": licenseBadge = "This project uses does not use any licenses"
                     break;
-                default: licenseBadge = "none"
+                default: licenseBadge = "This project uses does not use any licenses"
                     break;
             }
 
@@ -78,11 +78,15 @@ inquirer
             return `# ${title}
 ${licenseBadge}
 
+## Description
+
+${description}
+
 `
         }
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
