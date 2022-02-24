@@ -53,7 +53,7 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title, license, description, install, usage, contribution, test) {
+        function renderReadme(title, license, description, install, usage, contribution, test, email, github) {
             let licenseBadge = "";
             let licenseDiscrption = ""
 
@@ -134,16 +134,12 @@ ${test}
 
 ## Questions
 
-If you have any questions about the repo....
-
-`
-        }
+If you have any questions about the repo, open an issue or contact me directly at ${email}. Youcan find more of my work at [${github}](https://github.com/${github}/).
+`}
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test, data.email, data.github)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
-    });
-
-    // make sure table of contents linsk
+    }); 
