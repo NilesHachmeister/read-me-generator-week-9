@@ -41,7 +41,7 @@ inquirer
         },
         {
             type: 'input',
-            message: "What hoes the user need to know about using your repo?",
+            message: "What does the user need to know about using your repo?",
             name: 'usage',
         },
         {
@@ -53,7 +53,7 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title, license, description, install) {
+        function renderReadme(title, license, description, install, usage) {
             let licenseBadge = "";
 
             switch (license) {
@@ -99,13 +99,15 @@ ${description}
 
 ## Installation
 
-To install necessary dhependencies, run the following command:
+To install necessary dependencies, run the following command:
 
 '''
 ${install}
 '''
 
 ## Usage
+
+${usage}
 
 ## License
 
@@ -121,7 +123,7 @@ If you have any questions about the repo....
         }
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
