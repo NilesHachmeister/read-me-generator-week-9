@@ -1,6 +1,9 @@
+
+// declaring variables that node will be accessing
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// calling inquirer. This will go though and prompt the user with questions
 inquirer
     .prompt([
         {
@@ -50,13 +53,18 @@ inquirer
             name: 'contribution',
         },
     ])
+
+    // after all of the prompts have been given, the information the user inputs will be taken as data
     .then((data) => {
 
-
+// this function takes in the information given from the user and returns the contents of the readme.
         function renderReadme(title, license, description, install, usage, contribution, test, email, github) {
+            
+            // declaring the variables that will be used in the function
             let licenseBadge = "";
             let licenseDiscrption = ""
 
+            // this swtich will determine which license badge and license discription will be used based on what the user chose.
             switch (license) {
                 case "MIT": licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
                     licenseDiscrption = "This project is licensed under the MIT license."
@@ -79,9 +87,7 @@ inquirer
             }
 
 
-
-
-
+// this returns the readme format and takes in the user input.
             return `# ${title}
 ${licenseBadge}
 
@@ -137,8 +143,8 @@ ${test}
 If you have any questions about the repo, open an issue or contact me directly at ${email}. Youcan find more of my work at [${github}](https://github.com/${github}/).
 `}
 
-
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test, data.email, data.github)), (err) =>
+// this appends the file README.md and calls the function to render it.
+        fs.appendFile("README.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test, data.email, data.github)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
