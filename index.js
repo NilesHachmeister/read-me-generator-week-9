@@ -24,9 +24,10 @@ inquirer
             name: 'description',
         },
         {
-            type: 'input',
+            type: 'list',
             message: "What kind of license should your project have?",
             name: 'license',
+            choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "none"]
         },
         {
             type: 'input',
@@ -52,14 +53,16 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title) {
+        function renderReadme(title, license) {
+            let licenseBadge = license;
+
             return `# ${title}
  
             `
         }
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
