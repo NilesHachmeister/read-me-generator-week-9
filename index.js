@@ -53,7 +53,7 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title, license, description, install, usage, contribution) {
+        function renderReadme(title, license, description, install, usage, contribution, test) {
             let licenseBadge = "";
             let licenseDiscrption = ""
 
@@ -126,6 +126,12 @@ ${contribution}
 
 ## Tests
 
+To run tests, run the following command:
+
+'''
+${test}
+'''
+
 ## Questions
 
 If you have any questions about the repo....
@@ -134,7 +140,7 @@ If you have any questions about the repo....
         }
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
