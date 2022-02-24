@@ -53,7 +53,7 @@ inquirer
     .then((data) => {
 
 
-        function renderReadme(title, license, description) {
+        function renderReadme(title, license, description, install) {
             let licenseBadge = "";
 
             switch (license) {
@@ -99,6 +99,12 @@ ${description}
 
 ## Installation
 
+To install necessary dhependencies, run the following command:
+
+'''
+${install}
+'''
+
 ## Usage
 
 ## License
@@ -115,7 +121,7 @@ If you have any questions about the repo....
         }
 
 
-        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description)), (err) =>
+        fs.appendFile("README2.md", (renderReadme(data.name, data.license, data.description, data.install)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 
