@@ -101,6 +101,16 @@ ${description}
 
 ## Usage
 
+## License
+
+## Contributing
+
+## Tests
+
+## Questions
+
+If you have any questions about the repo....
+
 `
         }
 
