@@ -1,9 +1,9 @@
-# Readme generator
+# Readme Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This generates a readme based on user input
+It creates a readme based on user input
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ npm i inquirer
 
 ## Usage
 
-how to clone it
+How to clone it
 
 ## License
 
@@ -40,7 +40,7 @@ This project is licensed under the MIT license.
 
 They can email me
 
-## Tests 
+## Tests
 
 To run tests, run the following command:
 
