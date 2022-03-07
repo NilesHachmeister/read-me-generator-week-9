@@ -57,9 +57,9 @@ inquirer
     // after all of the prompts have been given, the information the user inputs will be taken as data
     .then((data) => {
 
-// this function takes in the information given from the user and returns the contents of the readme.
+        // this function takes in the information given from the user and returns the contents of the readme.
         function renderReadme(title, license, description, install, usage, contribution, test, email, github) {
-            
+
             // declaring the variables that will be used in the function
             let licenseBadge = "";
             let licenseDiscrption = ""
@@ -87,7 +87,7 @@ inquirer
             }
 
 
-// this returns the readme format and takes in the user input.
+            // this returns the readme format and takes in the user input.
             return `# ${title}
 ${licenseBadge}
 
@@ -143,8 +143,8 @@ ${test}
 If you have any questions about the repo, open an issue or contact me directly at ${email}. Youcan find more of my work at [${github}](https://github.com/${github}/).
 `}
 
-// this appends the file README.md and calls the function to render it.
-        fs.appendFile("README.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test, data.email, data.github)), (err) =>
+        // this writes the file README.md and calls the function to render it.
+        fs.writeFile("README.md", (renderReadme(data.name, data.license, data.description, data.install, data.usage, data.contribution, data.test, data.email, data.github)), (err) =>
             err ? console.log(err) : console.log("Generating README...")
         );
 

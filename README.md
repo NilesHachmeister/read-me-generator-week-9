@@ -1,9 +1,9 @@
-# read-me-genorator-week-9
+# Readme generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-The goal of this project is for the provide the user with a program to help them create readmes. After the user provides the program with some information a readme will be created containing the information the user provided.
+This generates a readme based on user input
 
 ## Table of Contents
 
@@ -15,10 +15,9 @@ The goal of this project is for the provide the user with a program to help them
 
 * [Contributing](#contributing)
 
-* [Example](#example)
+* [Tests](#tests)
 
 * [Questions](#questions)
-
 
 
 ## Installation
@@ -31,7 +30,7 @@ npm i inquirer
 
 ## Usage
 
-The user will need to have node installed and install inquirer. After inquirer has been installed the user will need to type node index.js and then answer the prompts.
+how to clone it
 
 ## License
 
@@ -39,13 +38,15 @@ This project is licensed under the MIT license.
 
 ## Contributing
 
-The best way to contact me is through email.
+They can email me
 
+## Tests 
 
-## Example
+To run tests, run the following command:
 
-You can find an example video of how to use this application at the following link:
-https://drive.google.com/file/d/1paiinuYsK-aDuc_p-AnXuZT9B98cBrc4/view
+'''
+N/A
+'''
 
 ## Questions
 
